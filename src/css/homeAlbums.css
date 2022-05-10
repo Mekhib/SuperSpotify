@@ -1,0 +1,19 @@
+ body {
+  height: 100%;
+  margin: 0;
+}
+#cover {
+    width: 800px;
+    height: 700px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+#cover > img {
+  float: left;
+  width: 33%;
+  margin: 1.66%;
+}

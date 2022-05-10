@@ -1,0 +1,42 @@
+.album {
+  width: 250px;
+}
+  .cover-container {
+    display: relative;
+    width: 200px;
+    height: 200px;
+    margin: 8px 50px 6px 50px;}
+    .cover-image {
+
+      width: 200px;
+      height: 200px;
+  
+      border-radius: 10px;
+      overflow: hidden; }
+      .blur-background {
+        opacity: .7;
+        filter: blur(13px);
+      }
+      .albumimg {
+        width: 100%;
+      }
+    
+  
+  .songName {
+  margin: 15px 15px 0px 60px;
+    font-size: 19px;
+    line-height: 23px;
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+.songTitle {
+    white-space: pre-wrap;
+    width: 115%;
+}
+.artist {
+      margin: 0px 60px;
+    font-size: 11px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #1a1a1a;
+}
