@@ -42,6 +42,11 @@ function Start() {
       <div className="listContainer">
         <ArtistList artistData={artistData} />
       </div>
+      <div>
+          <div>
+            
+          </div>
+      </div>
     </div>
   );
 }

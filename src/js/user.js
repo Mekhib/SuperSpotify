@@ -32,15 +32,15 @@ const topArtist = new Promise((resolve, err) => {
 });
 
 const userPlaylist = new Promise((resolve, err) => {
- spotifyApi.getUserPlaylists().then(
-   function (data) {
-     console.log("Retrieved playlists", data.body);
-     resolve(data)
-   },
-   function (err) {
-     console.log("Something went wrong!", err);
-   }
- );
+  spotifyApi.getUserPlaylists().then(
+    function (data) {
+      console.log("Retrieved playlists", data.body);
+      resolve(data);
+    },
+    function (err) {
+      console.log("Something went wrong!", err);
+    }
+  );
 });
 
 export { topArtist, topTracks, userPlaylist };
