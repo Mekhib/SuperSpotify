@@ -8,7 +8,7 @@ function PlayListItem(props) {
     <div class="album">
       <div class="cover-container">
         <div class="cover-image">
-          <a alt="" href="" className="block-icon">
+      
             <img
               className="albumimg"
               src={
@@ -16,7 +16,7 @@ function PlayListItem(props) {
                 "https://d2rd7etdn93tqb.cloudfront.net/wp-content/uploads/2022/03/spotify-playlist-cover-orange-headphones-032322.jpg"
               }
             />
-          </a>
+       
         </div>
       </div>
       <div className="songTitle">

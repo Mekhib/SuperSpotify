@@ -1,0 +1,12 @@
+.globalImage{
+    width: 15%;
+}
+
+.listItem {
+    display: flex;
+
+}
+
+.list-group list-group-flush list-group-numbered {
+    padding: 20px;
+}

@@ -8,13 +8,13 @@ function Artist(props) {
     <div class="album">
       <div class="cover-container">
         <div class="cover-image">
-          <a alt="" href="" className="block-icon">
+         
             <Image
               src={props.artist.images[0].url}
               roundedCircle
               className="albumimg"
             />
-          </a>
+       
         </div>
       </div>
       <div className="songTitle">

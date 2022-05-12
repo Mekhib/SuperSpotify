@@ -4,3 +4,12 @@
     margin-left: 100px;
     font-weight: 900;
 }
+
+.listcontainer {
+    padding: 100px;
+}
+
+.listItems {
+width: 33.3%;
+    padding: 20px;
+}

@@ -1,16 +1,17 @@
 import { React, useState, useEffect } from "react";
 import "../css/album.css"
+import {play} from "../js/controls"
 
 function Album(props) {
     console.log(props)
   
 return (
-  <div class="album">
+  <div class="album" onClick={()=>play(props.song.uri)}>
     <div class="cover-container">
       <div class="cover-image">
-        <a alt="" href="" className="block-icon">
+       
           <img className="albumimg" src={props.song.album.images[0].url} />
-        </a>
+      
       </div>
     </div>
     <div className="songTitle">

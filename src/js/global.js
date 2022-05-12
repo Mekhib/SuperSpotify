@@ -8,14 +8,23 @@ let spotifyApi = new SpotifyWebApi({
 spotifyApi.setAccessToken(token);
  
 let globalPlaylist = new Promise ((resolve, err)=>{
-  
+  spotifyApi.getPlaylist("37i9dQZEVXbLRQDuF5jeBp").then(
+    function (data) {
+resolve(data)    },
+    function (err) {
+      console.log("Something went wrong!", err);
+    }
+  );
 })
 
-spotifyApi.getPlaylist("5ieJqeLJjjI8iJWaxeBLuK").then(
-  function (data) {
-    console.log("Some information about this playlist", data.body);
-  },
-  function (err) {
-    console.log("Something went wrong!", err);
-  }
-);
+let globalAlbumPlaylist = new Promise ((resolve, err)=> {
+  spotifyApi.getPlaylist("7qWT4WcLgV6UUIPde0fqf9").then(
+    function (data) {
+      resolve(data);
+    },
+    function (err) {
+      console.log("Something went wrong!", err);
+    }
+  );
+})
+export  {globalPlaylist, globalAlbumPlaylist}
