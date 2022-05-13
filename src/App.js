@@ -3,21 +3,23 @@ import './css/App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from './components/Home';
 import Start from "./components/Start";
-import Footer from './components/footer';
+import Player from './components/Player.js';
 import Nav from './components/navbar';
 import Sidebar from './components/sidebar';
+import {useEffect, useState} from "react"
 
 
 function App() {
+  const [spotifyID, updateId] = useState(undefined)
   return (
     <Router>
-      <Nav/>
-      <Sidebar/>
+      <Nav />
+      <Sidebar />
       <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route exact path="/start" element={<Start/>} />
+        <Route path="/" element={<Home />} />
+        <Route exact path="/start" element={<Start updateId={updateId} />} />
       </Routes>
-      {/* <Footer /> */}
+      <Player spotifyID={spotifyID} updateId={updateId} />
     </Router>
   );
 }

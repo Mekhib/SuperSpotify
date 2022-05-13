@@ -12,7 +12,8 @@ import "../css/start.css"
 import "bootstrap/dist/css/bootstrap.css";
 
 
-function Start() {
+function Start({updateId}) {
+
   const [userData, updateUserData] = useState(undefined);
    const [artistData, updateArtistData] = useState(undefined);
     const [playlists, updatePlaylist] = useState(undefined);
@@ -44,7 +45,7 @@ function Start() {
        <div>
          <h1 className="title">Your Top Songs</h1>
          <div className="listContainer">
-           <SongsList userData={userData} />
+           <SongsList updateId={updateId} userData={userData} />
          </div>
          <h1 className="title">Your Playlist</h1>
          <div className="listContainer">

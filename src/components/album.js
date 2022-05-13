@@ -6,7 +6,7 @@ function Album(props) {
     console.log(props)
   
 return (
-  <div class="album" onClick={()=>play(props.song.uri)}>
+  <div class="album" onClick={()=>props.updateId(props.song.uri)}>
     <div class="cover-container">
       <div class="cover-image">
        
