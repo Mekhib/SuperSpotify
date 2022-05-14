@@ -1,6 +1,6 @@
 import React from "react";
-import "../css/footer.css";
 import SpotifyPlayer from 'react-spotify-web-playback';
+import "../css/player.css"
 
 
 
@@ -16,6 +16,9 @@ if(spotifyID && token){
   <SpotifyPlayer
   token={token}
   uris={[spotifyID]}
+  magnifySliderOnHover={true}
+  autoPlay={true}
+  styles={{height: "50px", activeColor: "green", sliderHeight: "12px"}}
 />
     )
 }
