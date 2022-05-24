@@ -18,14 +18,12 @@ if(spotifyID && token){
   uris={[spotifyID]}
   magnifySliderOnHover={true}
   autoPlay={true}
-  styles={{height: "50px", activeColor: "green", sliderHeight: "12px"}}
+  styles={{height: "50px", activeColor: "green", sliderHeight: "12px", sliderColor: "green"}}
 />
     )
 }
    else {
-       <div>
-           hello working 
-       </div>
+   
    }
 }
 

@@ -1,0 +1,47 @@
+.imageName {
+    display: flex;
+    font-size: 6px;
+    align-items: center;
+}
+
+.imageName h2 {
+    font-size: 20px;
+    padding: 13px;
+}
+
+.globalImage1 {
+    width: 15%;
+}
+
+.playlistTitle {
+       display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+.titleContainer {
+    display: flex;
+padding: 20px 20px 35px 0px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+}
+
+.table-sm > :not(caption) > * > * {
+    padding: 0.25rem 1.25rem 0.25rem 0.25rem;
+}
+
+thead, tbody, tfoot, tr, td, th {
+ 
+    border-radius: 2px;
+}
+
+.titleName {
+    font-weight: 800;
+    font-size: 60px;
+}
+
+.titleTracks {
+    font-weight: 200;
+    font-size: 20px;
+}

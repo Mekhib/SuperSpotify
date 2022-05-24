@@ -43,4 +43,19 @@ const userPlaylist = new Promise((resolve, err) => {
   );
 });
 
-export { topArtist, topTracks, userPlaylist };
+const loggedIn = new Promise((resolve,err)=> {
+  spotifyApi.getMe().then(
+    function (data) {
+    
+      console.log("Some information about the authenticated user", data.body);
+        resolve(data);
+    },
+    function (err) {
+    
+      console.log("Something went wrong!", err);
+        resolve(err);
+    }
+  );
+})
+
+export { topArtist, topTracks, userPlaylist, loggedIn };

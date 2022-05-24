@@ -27,4 +27,15 @@ let globalAlbumPlaylist = new Promise ((resolve, err)=> {
     }
   );
 })
-export  {globalPlaylist, globalAlbumPlaylist}
+
+let getPlaylist = async (id) => new Promise((resolve, err) => {
+  spotifyApi.getPlaylist(id).then(
+    function (data) {
+      resolve(data);
+    },
+    function (err) {
+      console.log("Something went wrong!", err);
+    }
+  );
+});
+export  {globalPlaylist, globalAlbumPlaylist, getPlaylist}

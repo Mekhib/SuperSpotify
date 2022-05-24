@@ -1,5 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { loggedIn } from "../js/user";
 import { Navbar, Container, Button } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import { Navigate } from "react-router-dom";
@@ -17,14 +18,22 @@ const SCOPE =
 let navigate = useNavigate();
 const [Statetoken, setToken] = React.useState(false);
 
+
+
   React.useEffect(() => {
-    if (Statetoken) {
-  navigate("/start");
-    }
+    
+  const checkStateToken = async () => {
+    await loggedIn.then(({ statusCode }) => {
+   if (statusCode != 401) {
+     // alert('signedIn')
+     navigate("/start");
+   }
+    });
+  };
+  checkStateToken();
     const hash = window.location.hash;
     let token = window.localStorage.getItem("token");
-
-    if (!token && hash) {
+    if (hash) {
       token = hash
         .substring(1)
         .split("&")
@@ -33,8 +42,9 @@ const [Statetoken, setToken] = React.useState(false);
 
       window.location.hash = "";
       window.localStorage.setItem("token", token);
+      setToken(token);
     }
- setToken(token);
+
   
   }, [Statetoken]);
 return (
