@@ -6,7 +6,7 @@ import Start from "./components/Start";
 import Player from './components/Player.js';
 import  LoggedIn  from './components/LoggedIn';
 import Nav from './components/navbar';
-import Sidebar from './components/sidebar';
+import Sidebar from './components/Sidebar';
 import PlayListScreen from './components/PlayListScreen';
 import {useEffect, useState} from "react"
 import PlayList from './components/Playlist';
@@ -18,16 +18,16 @@ function App() {
     <Router>
       <Nav />
       <Sidebar />
+      <LoggedIn>
       <Routes>
-        {/* <LoggedIn> */}
         <Route path="/" element={<Home />} />
         <Route exact path="/start" element={<Start updateId={updateId} />} />
         <Route
           path="/playlist/:id"
           element={<PlayListScreen updateId={updateId} />}
         />
-        {/* </LoggedIn> */}
       </Routes>
+      </LoggedIn>
       <Player spotifyID={spotifyID} updateId={updateId} />
     </Router>
   );

@@ -19,6 +19,8 @@ import { FaList, FaRegHeart } from "react-icons/fa";
 import { FiHome, FiLogOut, FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
 import { RiPencilLine } from "react-icons/ri";
 import { BiCog } from "react-icons/bi";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 //import sidebar css from react-pro-sidebar module and our custom css 
@@ -27,6 +29,7 @@ const Sidebar = () => {
   
     //create initial menuCollapse state using useState hook
     const [menuCollapse, setMenuCollapse] = useState(false)
+    const navigate = useNavigate()
 
     //create a custom function that will change menucollapse state from false to true and true to false
   const menuIconClick = () => {
@@ -42,6 +45,7 @@ const Sidebar = () => {
           <SidebarContent>
             <Menu iconShape="square">
               <MenuItem active={true} icon={<FiHome />}>
+                <Link to="/start" />
                 Home
               </MenuItem>
               <MenuItem icon={<FaList />}>Category</MenuItem>

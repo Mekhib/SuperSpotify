@@ -24,6 +24,25 @@ function Start({updateId}) {
 
    useEffect(() => {
      async function getData() {
+const songs = !userData && await topTracks.then((res) => {
+  updateUserData(res);
+});
+const artists =
+  !artistData &&
+  (await topArtist.then((res) => {
+    updateArtistData(res);
+  }));
+const playlist = !playlists && await userPlaylist.then((res) => {
+  updatePlaylist(res);
+});
+const global =
+  !globalSongs && (await globalPlaylist.then((res) => {
+    updateGlobalSongs(res);
+  }));
+const globalAlbum = !globalAlbum && await globalAlbumPlaylist.then((res) => {
+  updateGlobalAlbum(res);
+});
+        
         const isLoggedIn = await loggedIn.then(({statusCode})=>{
           console.log('statusCode',statusCode)
   if(statusCode === 401){
@@ -31,19 +50,7 @@ function Start({updateId}) {
   }
       
       })
-        const songs = await topTracks.then(res => {updateUserData(res)})
-        const artists = await topArtist.then((res) => {
-          updateArtistData(res);
-        });
-        const playlist = await userPlaylist.then((res)=> {
-          updatePlaylist(res)
-        })
-          const global = await globalPlaylist.then((res) => {
-            updateGlobalSongs(res);
-          });
-            const globalAlbum = await globalAlbumPlaylist.then((res) => {
-              updateGlobalAlbum(res);
-            });
+        
       }
       getData()
    }, [userData,artistData, playlists, globalSongs]);

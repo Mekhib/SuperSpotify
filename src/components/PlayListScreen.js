@@ -16,10 +16,12 @@ import {getPlaylist} from "../js/global"
 function PlayListScreen({updateId}) {
 const [data, updateData] = useState(undefined)
 useEffect(()=>{
+  if(!data) {
  getPlaylist(id).then((data) => {
-  updateData(data);
-});
-})
+   updateData(data);
+ });
+  }
+},[data])
 function convert(millis) {
   var minutes = Math.floor(millis / 60000);
   var seconds = ((millis % 60000) / 1000).toFixed(0);
