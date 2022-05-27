@@ -38,4 +38,28 @@ let getPlaylist = async (id) => new Promise((resolve, err) => {
     }
   );
 });
-export  {globalPlaylist, globalAlbumPlaylist, getPlaylist}
+
+let getArtist = async (id) =>
+  new Promise((resolve, err) => {
+    spotifyApi.getArtist(id).then(
+      function (data) {
+        resolve(data);
+      },
+      function (err) {
+        console.log("Something went wrong!", err);
+      }
+    );
+  });
+
+  let getArtistSongs = async (id) =>
+    new Promise((resolve, err) => {
+      spotifyApi.getArtistTopTracks(id, "US").then(
+        function (data) {
+          resolve(data);
+        },
+        function (err) {
+          console.log("Something went wrong!", err);
+        }
+      );
+    });
+export  {globalPlaylist, globalAlbumPlaylist, getPlaylist, getArtist, getArtistSongs}

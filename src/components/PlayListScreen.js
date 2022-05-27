@@ -15,6 +15,7 @@ import {getPlaylist} from "../js/global"
 
 function PlayListScreen({updateId}) {
 const [data, updateData] = useState(undefined)
+let { id } = useParams();
 useEffect(()=>{
   if(!data) {
  getPlaylist(id).then((data) => {
@@ -30,7 +31,7 @@ return seconds == 60
   : minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 }
 
-let { id } = useParams();
+
 if(data) {
   return (
     <div className="listcontainer">

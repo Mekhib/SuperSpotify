@@ -4,7 +4,8 @@ import Album from "./album"
 import ScrollContainer from "./ScrollHorizontal"
 
 function SongsList(props) {
-    const dataArray = props.userData.body.items;
+  console.log("props!!!", props)
+    const dataArray = props.userData.body.items || props.userData.body.tracks; ;
     const updateId = props.updateId
     return (
       <ScrollContainer>

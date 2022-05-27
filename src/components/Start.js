@@ -39,7 +39,7 @@ const global =
   !globalSongs && (await globalPlaylist.then((res) => {
     updateGlobalSongs(res);
   }));
-const globalAlbum = !globalAlbum && await globalAlbumPlaylist.then((res) => {
+const globalAlbums = !globalAlbum && await globalAlbumPlaylist.then((res) => {
   updateGlobalAlbum(res);
 });
         

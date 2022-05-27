@@ -1,11 +1,16 @@
 import { React, useState, useEffect } from "react";
 import "../css/album.css";
 import Image from "react-bootstrap/Image";
+import { useNavigate } from "react-router";
 
 function Artist(props) {
-  console.log(props);
+function goToArtist(id) {
+  navigate(`/artist/${id}`);
+}
+  const navigate = useNavigate();
+  console.log(props.artist.id);
   return (
-    <div class="album">
+    <div class="album" onClick={() => {goToArtist(props.artist.id)}}>
       <div class="cover-container">
         <div class="cover-image">
          

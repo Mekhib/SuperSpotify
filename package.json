@@ -20,6 +20,7 @@
     "react-scripts": "5.0.1",
     "react-spotify-web-playback": "^0.9.2",
     "react-transitions": "^1.0.0",
+    "sass": "^1.52.1",
     "spotify-web-api-node": "^5.0.2",
     "web-vitals": "^2.1.4"
   },

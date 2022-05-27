@@ -1,0 +1,12 @@
+.artistImage {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding: 29px;
+    flex-direction: column;
+}
+
+* div {
+    color: white;
+}
