@@ -62,4 +62,38 @@ let getArtist = async (id) =>
         }
       );
     });
-export  {globalPlaylist, globalAlbumPlaylist, getPlaylist, getArtist, getArtistSongs}
+
+      let getArtistAlbums = async (id) =>
+        new Promise((resolve, err) => {
+          spotifyApi.getArtistAlbums(id).then(
+            function (data) {
+              resolve(data);
+            },
+            function (err) {
+              console.log("Something went wrong!", err);
+            }
+          );
+        });
+
+           let getArtistArtist= async (id) =>
+             new Promise((resolve, error) => {
+             spotifyApi.getArtistRelatedArtists(id).then(
+               function (data) {
+                 console.log(data.body);
+                 resolve(data)
+               },
+               function (err) {
+                 error(err);
+               }
+             );
+             });
+
+        export {
+  globalPlaylist,
+  globalAlbumPlaylist,
+  getPlaylist,
+  getArtist,
+  getArtistSongs,
+  getArtistAlbums,
+  getArtistArtist,
+};

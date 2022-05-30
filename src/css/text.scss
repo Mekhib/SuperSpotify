@@ -1,0 +1,17 @@
+$bg-color: white;  // This can change
+$white : #fff;
+$black : #000;
+
+@function set-text-color($color) {
+    @if (lightness( $color ) > 50) {
+      @return $black; // Lighter color, return black
+    }
+    @else {
+      @return $white; // Darker color, return white
+    }
+}
+
+.text--color {
+   
+    color: set-text-color($bg-color);
+}

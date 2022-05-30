@@ -4,6 +4,7 @@ import Image from "react-bootstrap/Image";
 import { useNavigate } from "react-router";
 
 function Artist(props) {
+  console.log("artprops",props)
 function goToArtist(id) {
   navigate(`/artist/${id}`);
 }
@@ -24,13 +25,13 @@ function goToArtist(id) {
       </div>
       <div className="songTitle">
         <div className="songName">{props.artist.name}</div>
-        <div className="artist">
+        {/* <div className="artist">
           {props.artist.genres.length < 1
             ? props.artist.genres && props.artist.genres.forEach(({ genre }) => {
                 return `${genre}; `;
               })
             : `${props.artist.genres[0]}`}
-        </div>
+        </div> */}
       </div>
     </div>
   );

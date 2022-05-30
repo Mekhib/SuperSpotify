@@ -5,8 +5,28 @@
     align-items: center;
     padding: 29px;
     flex-direction: column;
+    padding: 30px 29px 0px 29px;
 }
 
-* div {
-    color: white;
+.artScrnImg {
+    padding: 24px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: black;
+    width: 18%;
+    box-shadow: 10px 10px 5px black;
 }
+
+.artNme {
+    line-height: 26px;
+    font-size: 40px;
+    font-weight: 800;
+    padding: 10px;
+}
+
+.artFollow {
+   font-weight: 300;
+}
+/* * div {
+    color: white;
+} */
