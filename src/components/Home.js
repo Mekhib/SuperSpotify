@@ -14,7 +14,7 @@ const REDIRECT_URI = "http://localhost:3000/";
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
 const RESPONSE_TYPE = "token";
 const SCOPE =
-  "user-top-read,user-read-private,user-read-playback-state,user-modify-playback-state";
+  "user-top-read,user-read-private,user-read-playback-state,user-modify-playback-state,user-read-recently-played,user-library-read";
 let navigate = useNavigate();
 const [Statetoken, setToken] = React.useState(false);
 
