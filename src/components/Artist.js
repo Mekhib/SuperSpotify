@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import { React } from "react";
 import "../css/album.css";
 import Image from "react-bootstrap/Image";
 import { useNavigate } from "react-router";

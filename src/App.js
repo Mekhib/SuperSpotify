@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './css/App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from './components/Home';
@@ -7,10 +6,11 @@ import Player from './components/Player.js';
 import  LoggedIn  from './components/LoggedIn';
 import Nav from './components/navbar';
 import Sidebar from './components/Sidebar';
+import UserTracks from './components/UserTracks';
 import PlayListScreen from './components/PlayListScreen';
+import AlbumScreen from "./components/AlbumScreen";
 import ArtistScreen from "./components/ArtistScreen";
-import {useEffect, useState} from "react"
-import PlayList from './components/Playlist';
+import {useState} from "react"
 
 
 function App() {
@@ -20,22 +20,49 @@ function App() {
     <Router>
       <Nav />
       <Sidebar />
-      <LoggedIn>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route exact path="/start" element={<Start updateId={updateId} />} />
-          <Route
-            path="/artist/:id"
-            element={
+      <Routes>
+        <Route
+          path="/"
+          element={      
+              <Home />
+          }
+        />
+        <Route
+          exact
+          path="/start"
+          element={
+            <LoggedIn>
+              <Start updateId={updateId} />
+            </LoggedIn>
+          }
+        />
+        <Route
+          path="/artist/:id"
+          element={
+             <LoggedIn>   
               <ArtistScreen updateId={updateId} updateArtistId={updateArtistId} />
-            }
-          />
-          <Route
-            path="/playlist/:id"
-            element={<PlayListScreen updateId={updateId} />}
-          />
-        </Routes>
-      </LoggedIn>
+            </LoggedIn> 
+         
+          }
+        />
+        <Route path="/tracks" element={  
+        <LoggedIn>
+           <UserTracks updateId={updateId} />
+        </LoggedIn>} />
+        <Route
+          path="/playlist/:id"
+          element={  <LoggedIn>
+            <PlayListScreen updateId={updateId} />
+            </LoggedIn>}
+        />
+        <Route
+          path="/album/:id"
+          element={    
+          <LoggedIn>
+             <AlbumScreen updateId={updateId} /> 
+            </LoggedIn>}
+        />
+      </Routes>
       <Player spotifyID={spotifyID} updateId={updateId} />
     </Router>
   );

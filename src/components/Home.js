@@ -1,6 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { loggedIn } from "../js/user";
+import { setWebToken } from "../js/global";
 import { Navbar, Container, Button } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import { Navigate } from "react-router-dom";
@@ -16,23 +17,11 @@ const RESPONSE_TYPE = "token";
 const SCOPE =
   "user-top-read,user-read-private,user-read-playback-state,user-modify-playback-state,user-read-recently-played,user-library-read";
 let navigate = useNavigate();
-const [Statetoken, setToken] = React.useState(false);
-
-
-
+const [stateToken, setToken] = React.useState(false);
   React.useEffect(() => {
-    
-  const checkStateToken = async () => {
-    await loggedIn.then(({ statusCode }) => {
-   if (statusCode != 401) {
-     // alert('signedIn')
-     navigate("/start");
-   }
-    });
-  };
-  checkStateToken();
     const hash = window.location.hash;
     let token = window.localStorage.getItem("token");
+    if (token) setToken(token)
     if (hash) {
       token = hash
         .substring(1)
@@ -42,11 +31,15 @@ const [Statetoken, setToken] = React.useState(false);
 
       window.location.hash = "";
       window.localStorage.setItem("token", token);
+      setWebToken(token)
+      
       setToken(token);
-    }
-
-  
-  }, [Statetoken]);
+    }  
+  },[stateToken]);
+if(stateToken){
+  return <Navigate to="/start"/>
+}
+else {
 return (
   <body>
     <div className="homeAlbums">
@@ -61,10 +54,17 @@ return (
       </h1>
     </div>
     <div className={"button"}>
-      <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`}> <Button variant="success">Sign in With Spotify</Button>{" "}</a>
+      <a
+        href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`}
+      >
+        {" "}
+        <Button variant="success">Sign in With Spotify</Button>{" "}
+      </a>
     </div>
   </body>
 );
+}
+
 
 }
 

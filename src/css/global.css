@@ -1,12 +1,31 @@
 .globalImage{
-    width: 15%;
+    width: 23% !important;
+    border: unset !important;
 }
 
 .listItem {
     display: flex;
 
 }
+.listItems h2 {
+    padding: 10px;
+    font-weight: 600;
+}
+.listItemInfo {
+    width: 100%;
+    padding: 12px;
+}
+.listItemInfoName {
+    font-size: 17px;
+    font-weight: 600;
+}
 
 .list-group list-group-flush list-group-numbered {
     padding: 20px;
+}
+
+.listGroup {
+    max-height: 550px;
+    margin-bottom: 10px;
+    overflow:scroll;
 }

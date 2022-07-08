@@ -1,5 +1,4 @@
-import { React, useState, useEffect } from "react";
-import Navbar from "./navbar";
+import { React} from "react";
 import Artist from "./Artist";
 import ScrollContainer from "./ScrollHorizontal";
 

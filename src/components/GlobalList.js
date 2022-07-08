@@ -6,11 +6,11 @@ import "../css/global.css"
 
 function GlobalList(props) {
 
-  let data = props.global.body.tracks.items.splice(0, 5);
+  let data = props.global.body.tracks.items;
  
-  console.log(data);
+  console.log("Global",data);
   return (
-    <ListGroup as="ol" numbered variant="flush">
+    <ListGroup as="ol" numbered variant="flush" className="listGroup">
       {props.global.body.tracks.items &&
         data &&
         data.map((track) => {
@@ -22,8 +22,8 @@ function GlobalList(props) {
                 responsive
                 className="globalImage"
               />
-              <div>
-                <div>{track.track.name}</div>
+              <div className="listItemInfo">
+                <div className="listItemInfoName">{track.track.name}</div>
                 <div>
                   {track.track.artists &&
                     track.track.artists.map((artist) => {

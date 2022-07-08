@@ -1,9 +1,10 @@
 import {React, useState, useEffect} from "react";
 import Navbar from "./navbar";
 import {topTracks, topArtist, userPlaylist, loggedIn} from "../js/user.js"
-import {globalPlaylist, globalAlbumPlaylist} from "../js/global.js"
+import {globalPlaylist, globalAlbumPlaylist,newReleases} from "../js/global.js"
 import SongsList from "./UserSongs"
 import ArtistList from "./UserArtists";
+import ReleasesList from "./ReleasesList";
 import GlobalList from "./GlobalList";
 import GlobalAlbum from "./GlobalAlbum";
 import Playlist from "./Playlist";
@@ -20,10 +21,10 @@ function Start({updateId}) {
     const [playlists, updatePlaylist] = useState(undefined);
     const [globalSongs, updateGlobalSongs] = useState(undefined);
     const [globalAlbum, updateGlobalAlbum] = useState(undefined);
-    
+    const [newReleasesData, updateReleases] = useState(undefined)
+useEffect(() => {
+async function getData() {
 
-   useEffect(() => {
-     async function getData() {
 const songs = !userData && await topTracks.then((res) => {
   updateUserData(res);
 });
@@ -35,6 +36,9 @@ const artists =
 const playlist = !playlists && await userPlaylist.then((res) => {
   updatePlaylist(res);
 });
+const releases = !newReleasesData && await newReleases.then((res)=> {
+  updateReleases(res)
+})
 const global =
   !globalSongs && (await globalPlaylist.then((res) => {
     updateGlobalSongs(res);
@@ -42,20 +46,11 @@ const global =
 const globalAlbums = !globalAlbum && await globalAlbumPlaylist.then((res) => {
   updateGlobalAlbum(res);
 });
-        
-        const isLoggedIn = await loggedIn.then(({statusCode})=>{
-          console.log('statusCode',statusCode)
-  if(statusCode === 401){
-    navigate("/")
-  }
-      
-      })
-        
-      }
+}
       getData()
    }, [userData,artistData, playlists, globalSongs]);
 
-   if (userData && artistData && playlists && globalSongs && globalAlbum) {
+   if (userData && artistData && playlists && globalSongs && globalAlbum && newReleasesData) {
      return (
        <div>
          <h1 className="title">Your Top Songs</h1>
@@ -76,8 +71,8 @@ const globalAlbums = !globalAlbum && await globalAlbumPlaylist.then((res) => {
              <GlobalList global={globalSongs} />
            </div>
            <div className="listItems">
-             <h2>Top Podcasts</h2>
-             <GlobalList global={globalSongs} />
+             <h2>New Releases</h2>
+             <ReleasesList releases={newReleasesData} />
            </div>
            <div className="listItems">
              <h2>Top Albums</h2>

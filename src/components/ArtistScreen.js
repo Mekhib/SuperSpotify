@@ -10,12 +10,20 @@ import Image from "react-bootstrap/Image";
 import ArtistList from "./UserArtists";
 import "../css/text.scss"
 import SongsList from "./UserSongs";
+import { useNavigate } from "react-router";
+
 
 function ArtistScreen({updateArtistId}){
     const [artData, updateArtData] = useState(undefined);
      const [artSongs, updateArtSongData] = useState(undefined);
      const [artAlbums, updateAlbums] = useState(undefined);
       const [artArt, updateArtArt] = useState(undefined);
+      const navigate = useNavigate();
+
+const updateId = (id) => {
+  navigate(`/album/${id}`, {state: {artData:artData}});
+};
+
 
     let { id } = useParams();
     useEffect(() => {
@@ -73,10 +81,10 @@ function ArtistScreen({updateArtistId}){
             <SongsList color={"white"} userData={artSongs} />
           </div>
           <h1 className="title" style={{ color: "white" }}>
-            Albums and Featues
+            Albums 
           </h1>
           <div className="listContainer" style={{ color: "white" }}>
-            <SongsList color={"white"} userData={artAlbums} />
+            <SongsList updateId={updateId} artAlbums={artAlbums} color={"white"} userData={artAlbums} />
           </div>
           <h1 className="title" style={{ color: "white" }}>
             Related Artists
