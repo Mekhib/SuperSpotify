@@ -11,6 +11,7 @@ import PlayListScreen from './components/PlayListScreen';
 import AlbumScreen from "./components/AlbumScreen";
 import ArtistScreen from "./components/ArtistScreen";
 import {useState} from "react"
+import Search from './components/Search';
 
 
 function App() {
@@ -21,12 +22,7 @@ function App() {
       <Nav />
       <Sidebar />
       <Routes>
-        <Route
-          path="/"
-          element={      
-              <Home />
-          }
-        />
+        <Route path="/" element={<Home />} />
         <Route
           exact
           path="/start"
@@ -39,28 +35,45 @@ function App() {
         <Route
           path="/artist/:id"
           element={
-             <LoggedIn>   
-              <ArtistScreen updateId={updateId} updateArtistId={updateArtistId} />
-            </LoggedIn> 
-         
+            <LoggedIn>
+              <ArtistScreen
+                updateId={updateId}
+                updateArtistId={updateArtistId}
+              />
+            </LoggedIn>
           }
         />
-        <Route path="/tracks" element={  
-        <LoggedIn>
-           <UserTracks updateId={updateId} />
-        </LoggedIn>} />
+        <Route
+          path="/tracks"
+          element={
+            <LoggedIn>
+              <UserTracks updateId={updateId} />
+            </LoggedIn>
+          }
+        />
         <Route
           path="/playlist/:id"
-          element={  <LoggedIn>
-            <PlayListScreen updateId={updateId} />
-            </LoggedIn>}
+          element={
+            <LoggedIn>
+              <PlayListScreen updateId={updateId} />
+            </LoggedIn>
+          }
         />
         <Route
           path="/album/:id"
-          element={    
-          <LoggedIn>
-             <AlbumScreen updateId={updateId} /> 
-            </LoggedIn>}
+          element={
+            <LoggedIn>
+              <AlbumScreen updateId={updateId} />
+            </LoggedIn>
+          }
+        />
+        <Route
+          path="/search"
+          element={
+            <LoggedIn>
+              <Search/>
+            </LoggedIn>
+          }
         />
       </Routes>
       <Player spotifyID={spotifyID} updateId={updateId} />

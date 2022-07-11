@@ -1,0 +1,33 @@
+
+
+.searchContainer {
+      padding: 60px 150px;
+}
+
+.form {
+    font-size: 55px !important;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom-style: solid !important;
+    border-bottom-color: #1DB954;
+    border-radius: 0px !important;
+}
+.buttns {
+      background: none;
+    /* border: none; */
+    border-left: none;
+    border-bottom-color: #1DB954 !important;
+    border-bottom-width: thin;
+    border-right: none;
+    border-top: none;
+}
+
+.buttnGroup{
+      text-align: center;
+    padding: 30px;
+}
+
+.btnGroupBtn {
+  font-size: 20px;
+}

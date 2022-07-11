@@ -17,12 +17,13 @@ import "bootstrap/dist/css/bootstrap.css";
 function Start({updateId}) {
   const navigate = useNavigate();
   const [userData, updateUserData] = useState(undefined);
-   const [artistData, updateArtistData] = useState(undefined);
-    const [playlists, updatePlaylist] = useState(undefined);
-    const [globalSongs, updateGlobalSongs] = useState(undefined);
-    const [globalAlbum, updateGlobalAlbum] = useState(undefined);
-    const [newReleasesData, updateReleases] = useState(undefined)
-useEffect(() => {
+  const [artistData, updateArtistData] = useState(undefined);
+  const [playlists, updatePlaylist] = useState(undefined);
+  const [globalSongs, updateGlobalSongs] = useState(undefined);
+  const [globalAlbum, updateGlobalAlbum] = useState(undefined);
+  const [newReleasesData, updateReleases] = useState(undefined)
+
+    useEffect(() => {
 async function getData() {
 
 const songs = !userData && await topTracks.then((res) => {

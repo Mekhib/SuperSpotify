@@ -1,0 +1,38 @@
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.imageArt {
+border-radius: 50% !important;
+    width: 352px !important;
+    height: 331px !important;
+    padding: 20px 30px;
+}
+
+.imageContainer {
+    display: flex;
+}
+
+.artistContainer{
+       display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.artistText {
+        text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+}

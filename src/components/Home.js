@@ -4,6 +4,7 @@ import { loggedIn } from "../js/user";
 import { setWebToken } from "../js/global";
 import { Navbar, Container, Button } from "react-bootstrap";
 import { useNavigate } from "react-router";
+import {FaSpotify} from "react-icons/fa"
 import { Navigate } from "react-router-dom";
 import HomeAlbums from "./HomeAlbums";
 import "../css/home.css";
@@ -49,7 +50,7 @@ return (
     <div className="headline">
       <h1>
         <strong>
-          Experince The best of Spotify, In a beautiful new package.
+          Experince The Best of Spotify, In a Beautiful New Package.
         </strong>
       </h1>
     </div>
@@ -58,7 +59,14 @@ return (
         href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`}
       >
         {" "}
-        <Button variant="success">Sign in With Spotify</Button>{" "}
+        <Button className="buttn" variant="success">
+          <div>
+            {" "}
+            <div className="signIn">
+              <FaSpotify /> Sign in With Spotify
+            </div>
+          </div>
+        </Button>{" "}
       </a>
     </div>
   </body>

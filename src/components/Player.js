@@ -8,11 +8,10 @@ import "../css/player.css"
 function Player({spotifyID}) {
 let token = window.localStorage.getItem("token");
 React.useEffect(()=>{
-    console.log(spotifyID)
+console.log(spotifyID)
 },[spotifyID])
 if(spotifyID && token){
      return (
-   
   <SpotifyPlayer
   token={token}
   uris={[spotifyID]}

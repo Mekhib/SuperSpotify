@@ -78,13 +78,22 @@ const updateId = (id) => {
             Top Songs
           </h1>
           <div className="listContainer">
-            <SongsList color={"white"} userData={artSongs} />
+            <SongsList
+              updateId={updateId}
+              color={"white"}
+              userData={artSongs}
+            />
           </div>
           <h1 className="title" style={{ color: "white" }}>
-            Albums 
+            Albums
           </h1>
           <div className="listContainer" style={{ color: "white" }}>
-            <SongsList updateId={updateId} artAlbums={artAlbums} color={"white"} userData={artAlbums} />
+            <SongsList
+              updateId={updateId}
+              artAlbums={artAlbums}
+              color={"white"}
+              userData={artAlbums}
+            />
           </div>
           <h1 className="title" style={{ color: "white" }}>
             Related Artists

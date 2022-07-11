@@ -149,6 +149,7 @@ spotifyApi
   getPlaylist,
   getArtist,
   getArtistSongs,
+  spotifyApi,
   getArtistAlbums,
   getArtistArtist,
   getAlbums,

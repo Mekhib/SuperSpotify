@@ -48,7 +48,11 @@ const Sidebar = () => {
                 <Link to="/start" />
                 Home
               </MenuItem>
-              <MenuItem icon={<FaList />}>Category</MenuItem>
+              <MenuItem icon={<FaList />}>
+                {" "}
+                <Link to="/tracks" />
+                Category
+              </MenuItem>
               <MenuItem icon={<FaRegHeart />}>Favourite</MenuItem>
               <MenuItem icon={<RiPencilLine />}>Author</MenuItem>
               <MenuItem icon={<BiCog />}>Settings</MenuItem>
