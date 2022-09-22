@@ -23,7 +23,7 @@ const LoggedIn = ({children}) => {
  } else {
    return <Navigate to={"/"}/>
  }
- return <div>{willRenderHome ? <Home/> : children }</div> 
+ return <div>{willRenderHome ? <Navigate to={"/"} /> : children}</div>; 
 }
  
 

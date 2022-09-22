@@ -25,7 +25,6 @@ function Start({updateId}) {
 
     useEffect(() => {
 async function getData() {
-
 const songs = !userData && await topTracks.then((res) => {
   updateUserData(res);
 });

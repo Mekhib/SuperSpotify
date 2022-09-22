@@ -4,6 +4,7 @@ import "../css/search.css"
 import {Form, InputGroup} from "react-bootstrap";
 import TableView from "./Table";
 import ArtsitView from "./ArtistView"
+ import AlbumView from "./AlbumView";
 import Col from "react-bootstrap/Col";
 import { ButtonGroup, Button } from "react-bootstrap";
 import "../js/search.js";
@@ -13,7 +14,7 @@ function Search(props) {
   const [inputText, setInputText] = React.useState("");
   const [isClicked, updateClick] = React.useState(false);
   const [trackResults, updateTrackResults] = React.useState(undefined);
-  const [AlbumResults, updateAlbumResults] = React.useState(undefined);
+  const [albumResults, updateAlbumResults] = React.useState(undefined);
   const [artistResults, updateArtistResults] = React.useState(undefined);
   const [selection, updateSelection] = React.useState(undefined)
 
@@ -26,10 +27,10 @@ function Search(props) {
         return <ArtsitView data={{ body: artistResults }} />;
         break;
       case "Albums":
-        return <TableView data={{ body: trackResults }} />;
+        return <AlbumView data={{ body: albumResults }} />;
         break;
 
-      default: return
+      default: return 
         break;
     }
   }
@@ -65,14 +66,10 @@ function Search(props) {
     console.log(inputText)
   };
 
-  React.useEffect(() => {}, [trackResults, AlbumResults, artistResults, selection]);
+  React.useEffect(() => {}, [trackResults, albumResults, artistResults, selection]);
   return (
     <div className="searchContainer">
       <InputGroup>
-        {/* <InputGroup.Prepend>
-    
-        </InputGroup.Prepend> */}
-
         <Form.Control
           className="form"
           onChange={inputHandler}
@@ -118,24 +115,6 @@ function Search(props) {
       )}
 
       {renderSelection()}
-      {/* <div id="cover">
-        <Col xs={5}>
-       
-        </Col>
-        <Col>
-          <button
-            type="button"
-            className="btn btn-warning"
-            onClick={() => search(inputText)}
-          >
-            <svg width="15px" height="15px">
-              <path d="M11.618 9.897l4.224 4.212c.092.09.1.23.02.312l-1.464 1.46c-.08.08-.222.072-.314-.02L9.868 11.66M6.486 10.9c-2.42 0-4.38-1.955-4.38-4.367 0-2.413 1.96-4.37 4.38-4.37s4.38 1.957 4.38 4.37c0 2.412-1.96 4.368-4.38 4.368m0-10.834C2.904.066 0 2.96 0 6.533 0 10.105 2.904 13 6.486 13s6.487-2.895 6.487-6.467c0-3.572-2.905-6.467-6.487-6.467 "></path>
-            </svg>
-          </button>
-        </Col>
-
-      </div>
- */}
     </div>
   );
 }

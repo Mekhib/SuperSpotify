@@ -3,9 +3,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from './components/Home';
 import Start from "./components/Start";
 import Player from './components/Player.js';
-import  LoggedIn  from './components/LoggedIn';
+import LoggedIn  from './components/LoggedIn';
 import Nav from './components/navbar';
 import Sidebar from './components/Sidebar';
+import Auth from './components/Auth'
 import UserTracks from './components/UserTracks';
 import PlayListScreen from './components/PlayListScreen';
 import AlbumScreen from "./components/AlbumScreen";
@@ -71,8 +72,16 @@ function App() {
           path="/search"
           element={
             <LoggedIn>
-              <Search/>
+              <Search />
             </LoggedIn>
+          }
+        />
+        <Route
+          path="/auth"
+          element={
+            
+              <Auth/>
+     
           }
         />
       </Routes>

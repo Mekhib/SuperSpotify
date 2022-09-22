@@ -15,7 +15,7 @@ import {
 } from "react-pro-sidebar";
 
 //import icons from react icons
-import { FaList, FaRegHeart } from "react-icons/fa";
+import { FaList, FaRegHeart, FaSearch } from "react-icons/fa";
 import { FiHome, FiLogOut, FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
 import { RiPencilLine } from "react-icons/ri";
 import { BiCog } from "react-icons/bi";
@@ -51,9 +51,11 @@ const Sidebar = () => {
               <MenuItem icon={<FaList />}>
                 {" "}
                 <Link to="/tracks" />
-                Category
+                Tracks
               </MenuItem>
-              <MenuItem icon={<FaRegHeart />}>Favourite</MenuItem>
+              <MenuItem icon={<FaSearch />}>     {" "}
+                <Link to="/search" />
+                Search</MenuItem>
               <MenuItem icon={<RiPencilLine />}>Author</MenuItem>
               <MenuItem icon={<BiCog />}>Settings</MenuItem>
               <MenuItem icon={<FiLogOut />}>Logout</MenuItem>

@@ -33,12 +33,11 @@ const [stateToken, setToken] = React.useState(false);
       window.location.hash = "";
       window.localStorage.setItem("token", token);
       setWebToken(token)
-      
       setToken(token);
     }  
   },[stateToken]);
 if(stateToken){
-  return <Navigate to="/start"/>
+  return <Navigate to="/auth"/>
 }
 else {
 return (
