@@ -52,34 +52,40 @@ const globalAlbums = !globalAlbum && await globalAlbumPlaylist.then((res) => {
 
    if (userData && artistData && playlists && globalSongs && globalAlbum && newReleasesData) {
      return (
-       <div>
-         <h1 className="title">Your Top Songs</h1>
+       <body>
          <div className="listContainer">
+           <div className="title">
+             <div className="titleText">Your Top Songs</div>
+           </div>
            <SongsList updateId={updateId} userData={userData} />
          </div>
-         <h1 className="title">Your Playlist</h1>
          <div className="listContainer">
+           <div className="title">
+             <div className="titleText">Your Playlist</div>
+           </div>
            <Playlist playlist={playlists} />
          </div>
-         <h1 className="title">Your Top Artists</h1>
          <div className="listContainer">
+           <div className="title">
+             <div className="titleText">Your Top Artists</div>
+           </div>
            <ArtistList artistData={artistData} />
          </div>
          <div className="container listcontainer">
            <div className="listItems">
-             <h2>Top Songs</h2>
+               <div className="titleText">Top Songs</div>
              <GlobalList global={globalSongs} />
            </div>
            <div className="listItems">
-             <h2>New Releases</h2>
+                  <div className="titleText">New Releases</div>
              <ReleasesList releases={newReleasesData} />
            </div>
            <div className="listItems">
-             <h2>Top Albums</h2>
+              <div className="titleText">Top Albums</div>
              <GlobalAlbum global={globalAlbum} />
            </div>
          </div>
-       </div>
+       </body>
      );
    } else {
      return <LoadingSpinner />;

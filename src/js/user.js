@@ -1,4 +1,20 @@
+
+function handleStorage(){
+  // window.location.reload()
+  console.log("reloading")
+}
+
+
+window.dispatchEvent(new Event("storage"));
+window.addEventListener("storage", event => {
+  alert("changing")
+  console.log("eventkey", event.key)
+  console.log("newvalue", event.newValue)
+});
+
+
 let token = window.localStorage.getItem("token");
+console.log("token", token);
 let SpotifyWebApi = require("spotify-web-api-node");
 let spotifyApi = new SpotifyWebApi({
   clientId: "e4fe20831fd44f7f9dca5cd597f58779",
@@ -43,54 +59,50 @@ const userPlaylist = new Promise((resolve, err) => {
   );
 });
 
-const loggedIn = new Promise((resolve,err)=> {
-  if(token){
-  spotifyApi.getMe().then(
-    function (data) {
-      console.log("Some information about the authenticated user", data.body);
-      resolve(data);
-    },
-    function (err) {
-      console.log("Something went wrong with get me!", err);
-      resolve(err);
-    }
-  );
+const loggedIn = new Promise((resolve, err) => {
+  if (token) {
+    spotifyApi.getMe().then(
+      function (data) {
+        console.log("Some information about the authenticated user", data.body);
+        resolve(data);
+      },
+      function (err) {
+        console.log("Something went wrong with get me!", err);
+        resolve(err);
+      }
+    );
   }
-
-})
-
-const userRecentTracks = new Promise((resolve, err) => {
-spotifyApi
-  .getMyRecentlyPlayedTracks({
-    limit: 10,
-  })
-  .then(
-    function (data) {
-      // Output items
-      resolve(data)
-    },
-    function (error) {
-      err(error)
-      console.log("Something went wrong!", error);
-    }
-  );
 });
 
-const userTracks = new Promise((resolve, err) => {
+const userRecentTracks = new Promise((resolve, err) => {
   spotifyApi
-    .getMySavedTracks({limit: 50})
+    .getMyRecentlyPlayedTracks({
+      limit: 10,
+    })
     .then(
       function (data) {
+        // Output items
         resolve(data);
       },
       function (error) {
         err(error);
-
         console.log("Something went wrong!", error);
       }
     );
 });
 
+const userTracks = new Promise((resolve, err) => {
+  spotifyApi.getMySavedTracks({ limit: 50 }).then(
+    function (data) {
+      resolve(data);
+    },
+    function (error) {
+      err(error);
+
+      console.log("Something went wrong!", error);
+    }
+  );
+});
 
 export {
   topArtist,

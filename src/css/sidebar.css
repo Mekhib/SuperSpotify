@@ -1,7 +1,7 @@
 
 #header {
-    position: absolute;
-    width: 220px;
+    position: unset;
+    width: unset;
   }
 
   #header .closemenu {
@@ -21,7 +21,7 @@
     min-width: 100%;
   }
   #header .pro-sidebar.collapsed {
-    width: 80px;
+    width: 100%;
     min-width: 80px;
   }
   #header .pro-sidebar-inner {
@@ -33,13 +33,28 @@
   }
   #header .pro-sidebar-inner .pro-sidebar-layout .logotext p {
     font-size: 20px;
-    padding: 0 20px;
     color: #000;
     font-weight: bold;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
   #header .pro-sidebar-inner .pro-sidebar-layout ul {
-    padding: 0 5px;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
+
+  .pro-sidebar .pro-menu {
+ padding-bottom: 0px !important;
+}
   #header .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item {
     color: #000;
     margin: 10px 0px;
@@ -57,6 +72,15 @@
   #header .logo {
     padding: 20px;
   }
+  .pro-sidebar .pro-menu {
+    padding-top: 10px;
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
   
   @media only screen and (max-width: 720px) {
     html {

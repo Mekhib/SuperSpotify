@@ -5,7 +5,7 @@ function Nav() {
 return (
   <Navbar bg="light" variant="light">
     <Container>
-      <Navbar.Brand href="#home">
+      <Navbar.Brand href="http://localhost:3000/">
         <img
           alt=""
           src="https://e1.pngegg.com/pngimages/893/800/png-clipart-spotify-for-os-x-el-capitan-spotify-icon.png"

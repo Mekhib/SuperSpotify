@@ -9,9 +9,9 @@ import {
 function PlayListItem(props) {
   console.log(props);
   return (
-    <div class="album" onClick={props.onClick}>
-      <div class="cover-container">
-        <div class="cover-image">
+    <div className="album" onClick={props.onClick}>
+      <div className="cover-container">
+        <div className="cover-image">
           <img
             className="albumimg"
             src={
@@ -22,8 +22,8 @@ function PlayListItem(props) {
         </div>
       </div>
       <div className="songTitle">
-        <div className="songName">{props.playlist.name}</div>
-        <div className="artist">{props.playlist.tracks.total} Tracks</div>
+        <strong>{props.playlist.name}</strong>
+        {props.playlist.tracks.total} Tracks
       </div>
     </div>
   );

@@ -37,6 +37,7 @@ const [stateToken, setToken] = React.useState(false);
     }  
   },[stateToken]);
 if(stateToken){
+  console.log("token", stateToken)
   return <Navigate to="/auth"/>
 }
 else {

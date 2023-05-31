@@ -7,7 +7,7 @@ const LoggedIn = ({children}) => {
   var willRenderHome = false
 //  let navigate = useNavigate()
  let token = window.localStorage.getItem("token");
- if (token) {
+ if (token != null) {
    const isLoggedIn = loggedIn.then(({ statusCode }) => {
      console.log("statusCode", statusCode);
      if (statusCode === 401) {

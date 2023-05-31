@@ -33,9 +33,9 @@ function UserTracks(props) {
     if (recentTracks && tracks) {
 return (
   <div className="listcontainer">
-    <h1 className="tracksTitle">
-     Last Played
-    </h1>
+    <div className="title">
+      <div className="titleText">Most Recent</div>
+    </div>
     <SongsList userData={recentTracks} />
     <TableView data={tracks} updateId={props.updateId} />
   </div>

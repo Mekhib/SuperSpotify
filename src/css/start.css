@@ -1,16 +1,30 @@
 .title{
-        display: flex;
-    padding: 20px;
-    margin-left: 100px;
-    font-weight: 900;
+    display: flex;
+    width: 49%;
+    align-content: stretch;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
-.listcontainer {
-padding: 46px 100px 100px 125px;
+.titleText {
+        width: 50%;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.listContainer {
+margin-top: 35px;
 }
 
 
 .listItems {
 width: 33.3%;
     padding: 20px;
+}
+
+.startPanels{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
 }

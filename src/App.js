@@ -27,6 +27,7 @@ function App() {
         <Route
           exact
           path="/start"
+          forceRefresh={true}
           element={
             <LoggedIn>
               <Start updateId={updateId} />
@@ -35,6 +36,7 @@ function App() {
         />
         <Route
           path="/artist/:id"
+          forceRefresh={true}
           element={
             <LoggedIn>
               <ArtistScreen
@@ -76,14 +78,7 @@ function App() {
             </LoggedIn>
           }
         />
-        <Route
-          path="/auth"
-          element={
-            
-              <Auth/>
-     
-          }
-        />
+        <Route path="/auth" element={<Auth />} />
       </Routes>
       <Player spotifyID={spotifyID} updateId={updateId} />
     </Router>

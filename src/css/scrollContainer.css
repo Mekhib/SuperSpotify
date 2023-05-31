@@ -2,5 +2,26 @@
   display: flex;
   width: 100%;
   overflow: scroll;
-    white-space: nowrap;
+  
 }
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #48cf73 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 1px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #48cf73;
+    border-radius: 5px;
+ 
+  }

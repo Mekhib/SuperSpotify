@@ -7,13 +7,14 @@ function Artist(props) {
   console.log("artprops",props)
 function goToArtist(id) {
   navigate(`/artist/${id}`);
+  navigate(0);
 }
   const navigate = useNavigate();
   console.log(props.artist.id);
   return (
-    <div class="album" onClick={() => {goToArtist(props.artist.id)}}>
-      <div class="cover-container">
-        <div class="cover-image">
+    <div className="album" onClick={() => {goToArtist(props.artist.id)}}>
+      <div className="cover-container">
+        <div className="cover-image">
          
             <Image
               src={props.artist.images[0].url}
@@ -25,13 +26,6 @@ function goToArtist(id) {
       </div>
       <div className="songTitle">
         <div className="songName">{props.artist.name}</div>
-        {/* <div className="artist">
-          {props.artist.genres.length < 1
-            ? props.artist.genres && props.artist.genres.forEach(({ genre }) => {
-                return `${genre}; `;
-              })
-            : `${props.artist.genres[0]}`}
-        </div> */}
       </div>
     </div>
   );

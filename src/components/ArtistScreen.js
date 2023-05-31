@@ -74,20 +74,26 @@ const updateId = (id) => {
               </div>
             </div>
           </div>
-          <h1 className="title" style={{ color: "white" }}>
-            Top Songs
-          </h1>
+
           <div className="listContainer">
+            <div className="title">
+              <div className="titleText" style={{ color: "white" }}>
+                Top Songs
+              </div>
+            </div>
             <SongsList
               updateId={updateId}
               color={"white"}
               userData={artSongs}
             />
           </div>
-          <h1 className="title" style={{ color: "white" }}>
-            Albums
-          </h1>
+
           <div className="listContainer" style={{ color: "white" }}>
+            <div className="title">
+              <div className="titleText" style={{ color: "white" }}>
+                Albums
+              </div>
+            </div>
             <SongsList
               updateId={updateId}
               artAlbums={artAlbums}
@@ -95,10 +101,16 @@ const updateId = (id) => {
               userData={artAlbums}
             />
           </div>
-          <h1 className="title" style={{ color: "white" }}>
-            Related Artists
-          </h1>
-          <div className="listContainer" style={{ color: "white" }}>
+
+          <div
+            className="listContainer"
+            style={{ color: "white", marginBottom: "50px" }}
+          >
+            <div className="title">
+              <div className="titleText" style={{ color: "white" }}>
+                You May Like...
+              </div>
+            </div>
             <ArtistList color={"white"} artistData={artArt} />
           </div>
         </FrostedGlassView>
