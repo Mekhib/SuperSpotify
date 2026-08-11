@@ -6,7 +6,6 @@ import TableView from "../../components/TableView.js";
 import Title from "../../components/Title.js";
 import LoadingSpinner from "../../components/LoadingSpinner"; 
 import "../../css/tracks.css";
-import { playerService } from "../../services/playerService";
 
 function UserTracks({ updateId }) {
   const navigate = useNavigate();
