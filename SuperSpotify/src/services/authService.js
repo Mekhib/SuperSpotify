@@ -1,5 +1,3 @@
- 
-
 
 const fetchFromAuth = async (endpoint, options = {}) => {
   const response = await fetch(`${process.env.REACT_APP_API_URL}${endpoint}`, {
@@ -10,11 +8,12 @@ const fetchFromAuth = async (endpoint, options = {}) => {
       ...options.headers,
     },
   });
-console.log(response)
+  
+  console.log(response);
+  
   if (!response.ok) {
     throw new Error(`Authentication server error: ${response.statusText}`);
   }
-
 
   return response.json();
 };
@@ -42,19 +41,11 @@ export const authService = {
 
   demoLogin: () => handleDemoLogin(),
 
-  login: async () => {
-    try {
-      const authorizeUrl = await fetchFromAuth("/auth/signin");
-      if (authorizeUrl) {
-        window.location.href = authorizeUrl;
-      }
-    } catch (error) {
-      console.error("Failed to retrieve Spotify login URL:", error);
-      throw error;
-    }
+  // ✅ FIX: Removed fetchFromAuth. Directly redirect the window instead.
+  login: () => {
+    window.location.href = `${process.env.REACT_APP_API_URL}/auth/signin`;
   },
 
- 
   checkSessionStatus: async () => {
     try {
       const status = await fetchFromAuth("/auth/status");
@@ -64,10 +55,8 @@ export const authService = {
     }
   },
 
-
   logout: async () => {
     try {
-    
       await fetchFromAuth("/auth/signout", { method: "POST" });
     } catch (error) {
       console.error("Error during server-side signout:", error);
