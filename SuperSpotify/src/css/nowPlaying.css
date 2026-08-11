@@ -1,0 +1,295 @@
+/* Container & Navigation */
+.now-playing-wrapper {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%);
+  min-height: 100vh;
+  width: 100%;
+  padding: 32px 4%;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.np-lyrics-container {
+  padding: 12px 8px;
+}
+
+.np-lyrics-text {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.95);
+  white-space: pre-line; 
+  text-align: left;
+}
+
+.empty-player-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #121212;
+  color: #fff;
+}
+
+.minimize-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #fff;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  margin-bottom: 24px;
+  align-self: flex-start;
+  transition: background 0.2s;
+}
+
+.minimize-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Two-Column Grid Layout */
+.np-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6%;
+  flex: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Left Column: Art & Controls */
+.np-primary-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.np-art-container {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 40px;
+}
+
+.np-album-art {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+}
+
+.np-track-details {
+  margin-bottom: 24px;
+}
+
+.np-title {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.np-artist {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+/* Scrub Bar */
+.np-progress-container {
+  margin-bottom: 32px;
+}
+
+.np-progress-bg {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.np-progress-fill {
+  height: 100%;
+  background: #ffffff;
+  border-radius: 6px;
+}
+
+.np-time-markers {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Playback Controls */
+.np-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.np-controls button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 32px;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.np-controls button:hover {
+  transform: scale(1.1);
+}
+
+.np-play-btn {
+  font-size: 56px !important;
+}
+
+/* Right Column: Queue & Lyrics */
+.np-secondary-column {
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 24px;
+  padding: 24px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  height: calc(100vh - 140px); /* Keeps it scrollable within viewport */
+}
+
+.np-tabs {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 12px;
+}
+
+.np-tabs button {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.np-tabs button.active {
+  color: #ffffff;
+}
+
+.np-tab-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+/* Queue List */
+.np-queue-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.np-queue-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.np-queue-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.np-queue-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.np-queue-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.np-queue-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.np-queue-artist {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.np-empty-state, .np-lyrics-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  margin-top: 40px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Custom Scrollbar for Right Column */
+.np-tab-content::-webkit-scrollbar {
+  width: 6px;
+}
+.np-tab-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+.np-tab-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+/* Mobile Overrides */
+@media (max-width: 992px) {
+  .now-playing-wrapper {
+    padding: 24px 20px;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .np-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .np-secondary-column {
+    height: 600px; 
+    margin-bottom: 40px;
+  }
+
+  .np-title {
+    font-size: 28px;
+  }
+}

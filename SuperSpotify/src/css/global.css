@@ -1,0 +1,123 @@
+/* 3-Column Responsive Grid Container */
+.lists-grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 equal proportions */
+  gap: 24px;
+  padding: 0 24px;
+  margin-top: 16px;
+  margin-bottom: 40px;
+}
+
+/* Mobile & Tablet View: Stack columns vertically */
+@media (max-width: 992px) {
+  .lists-grid-container {
+    display: contents;
+    gap: 32px;
+   
+  }
+  .list-column-card {
+        width: 100%;
+  }
+ 
+}
+
+/* Individual Column Card Wrapper */
+.list-column-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+
+}
+
+.list-column-card .section-title-container {
+  padding: 0 0 12px 0; /* Align title flush within the card */
+  margin-top: 0;
+}
+
+/* List Group Box */
+.listGroup {
+  max-height: 480px;
+  overflow-y: auto;
+  border-radius: 10px;
+  padding-right: 4px;
+}
+
+/* Minimal Custom Scrollbar */
+.listGroup::-webkit-scrollbar {
+  width: 4px;
+}
+.listGroup::-webkit-scrollbar-track {
+  background: transparent;
+}
+.listGroup::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+}
+
+/* Individual Track Item */
+.listItem {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 10px !important;
+  border: none !important;
+  border-radius: 8px;
+  cursor: pointer;
+  background: transparent;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.listItem:hover {
+  background-color: #f5f5f7;
+  transform: translateX(2px);
+}
+
+/* Fixed Aspect-Ratio Thumbnail */
+.globalImage {
+  width: 48px !important;
+  height: 48px !important;
+  object-fit: cover;
+  border-radius: 8px !important;
+  border: none !important;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.listItemInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0; /* Enables text truncation */
+  flex-grow: 1;
+}
+
+.listItemInfoName {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #1d1d1f;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.listItemMetadata {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #86868b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 2px;
+}
+
+.listItemDuration {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #a1a1a6;
+  flex-shrink: 0;
+  margin-left: auto;
+  padding-left: 8px;
+}

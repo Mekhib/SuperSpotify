@@ -1,0 +1,28 @@
+.section-title-container {
+  padding: 0 24px; /* Matches the grid alignment */
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+h3 {
+  width: fit-content;
+}
+
+.section-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em; /* Tighter Apple-style tracking */
+  color: #111;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .section-title-container {
+    padding: 0 16px; 
+    margin-top: 24px;
+    width: fit-content;
+  }
+  .section-title {
+    font-size: 1.15rem;
+  }
+}

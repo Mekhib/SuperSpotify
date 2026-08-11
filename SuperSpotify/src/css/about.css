@@ -1,0 +1,257 @@
+/* Base Container Styles (White Background, Black Text) */
+.about-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #111827; /* Pure dark/black text */
+  background-color: #ffffff; /* Clean white background */
+}
+
+/* Header */
+.about-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #f3f4f6;
+  color: #374151;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.about-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+.app-goal {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #374151;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.divider {
+  border: none;
+  height: 1px;
+  background-color: #e5e7eb;
+  margin: 2.5rem 0;
+}
+
+/* Section Headings */
+.about-section h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 1.5rem;
+}
+
+/* Engineering Metrics Grid (Employer Showcase) */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.25rem;
+}
+
+.metric-card {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.metric-number {
+  display: block;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #2563eb; /* Professional accent blue */
+  margin-bottom: 0.5rem;
+}
+
+.metric-label {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* Tech Stack Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.skill-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.skill-card h3 {
+  font-size: 1.1rem;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  border-bottom: 2px solid #2563eb;
+  display: inline-block;
+  padding-bottom: 0.2rem;
+}
+
+.skill-card p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
+
+/* Developer Profile Layout */
+.developer-profile {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.developer-bio {
+  flex: 2;
+}
+
+.developer-bio h3 {
+  font-size: 1.75rem;
+  color: #000000;
+  margin-bottom: 0.25rem;
+}
+
+.developer-title {
+  font-size: 1.1rem;
+  color: #2563eb;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.bio-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #374151;
+  margin-bottom: 1.5rem;
+}
+
+.education-box {
+  background-color: #f9fafb;
+  border-left: 4px solid #2563eb;
+  padding: 1.25rem;
+  border-radius: 0 8px 8px 0;
+}
+
+.education-box h4 {
+  font-size: 1.05rem;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.education-box p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-bottom: 0.4rem;
+}
+
+/* Contact Card */
+.contact-card {
+  flex: 1;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.contact-card h3 {
+  font-size: 1.2rem;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.contact-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.contact-card li {
+  font-size: 0.95rem;
+  color: #374151;
+  margin-bottom: 0.75rem;
+  word-break: break-word;
+}
+
+.contact-card a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.contact-card a:hover {
+  text-decoration: underline;
+}
+
+.cta-actions {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-primary {
+  display: block;
+  text-align: center;
+  background-color: #111827;
+  color: #ffffff !important;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  text-decoration: none !important;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #2563eb;
+}
+
+/* Mobile Responsiveness Rules */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .about-header h1 {
+    font-size: 2rem;
+  }
+
+  .app-goal {
+    font-size: 1rem;
+  }
+
+  .developer-profile {
+    flex-direction: column;
+  }
+
+  .contact-card {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .metrics-grid,
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,126 @@
+/* Force border-box calculation */
+.artist-grid-container,
+.artist-grid-container * {
+  box-sizing: border-box;
+}
+
+/* Desktop View: Dynamic Auto-Fill Grid */
+.artist-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 24px;
+  padding: 0 24px;
+  margin-top: 16px;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+/* Desktop Artist Card */
+.artist-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 18px 14px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  min-width: 0;
+}
+
+.artist-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08), 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* Circular Avatar Wrapper */
+.artist-avatar-wrapper {
+  width: 100%;
+  max-width: 130px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 12px;
+  background-color: #f2f2f7;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+.artist-avatar-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Artist Text Container */
+.artist-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  min-width: 0;
+}
+
+.artist-name {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.artist-meta {
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: #86868b;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+}
+
+/* MOBILE VIEW: Transforms Grid Cards into a Horizontal List Layout */
+@media (max-width: 768px) {
+  .artist-grid-container {
+    grid-template-columns: 1fr; /* Single column vertical list */
+    gap: 10px;
+    padding: 0 16px;
+  }
+
+  .artist-card {
+    flex-direction: row; /* Horizontal row */
+    align-items: center;
+    text-align: left;
+    padding: 10px 14px;
+    border-radius: 12px;
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: #ffffff;
+  }
+
+  .artist-card:hover {
+    transform: translateX(2px);
+    box-shadow: none;
+  }
+
+  .artist-avatar-wrapper {
+    width: 52px;
+    height: 52px;
+    max-width: none;
+    margin-bottom: 0;
+    margin-right: 14px;
+  }
+
+  .artist-name {
+    font-size: 0.95rem;
+  }
+
+  .artist-meta {
+    font-size: 0.8rem;
+  }
+}

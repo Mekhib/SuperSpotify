@@ -1,0 +1,201 @@
+
+
+
+.form {
+    font-size: 55px !important;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom-style: solid !important;
+    border-bottom-color: #1DB954;
+    border-radius: 0px !important;
+}
+
+
+.buttnGroup{
+      text-align: center;
+    padding: 30px;
+}
+
+.apple-btn {
+    --spotify-green: #0e7231;
+
+    background: var(--spotify-green);
+    border: none;
+    color: rgb(37, 34, 34);
+
+    height: 44px;
+    min-width: 120px;
+    padding: 0 22px;
+
+    border-radius: 12px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    box-shadow:
+        0 1px 2px rgba(0,0,0,.08),
+        0 6px 16px rgba(0,0,0,.10);
+
+    transition:
+        background-color .2s ease,
+        transform .15s ease,
+        box-shadow .2s ease;
+}
+
+.apple-btn:hover:not(:disabled) {
+    background: #22c55e;
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 2px 6px rgba(0,0,0,.10),
+        0 10px 24px rgba(0,0,0,.14);
+}
+
+.apple-btn:active:not(:disabled) {
+    transform: scale(.98);
+
+    box-shadow:
+        0 1px 3px rgba(0,0,0,.10);
+}
+
+.apple-btn:focus-visible {
+    outline: none;
+    box-shadow:
+        0 0 0 4px rgba(29,185,84,.22),
+        0 2px 10px rgba(0,0,0,.10);
+}
+
+.apple-btn:disabled {
+    background: #d2d2d7;
+    color: rgba(255,255,255,.9);
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+.searchContainer {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 24px;
+}
+
+/* Search */
+
+.searchBarContainer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.searchInput {
+    flex: 1;
+    height: 46px;
+
+    border-radius: 12px !important;
+    border: 1px solid #d2d2d7;
+
+    padding: 0 16px;
+
+    font-size: 15px;
+
+    transition: all .2s ease;
+}
+
+.searchInput:focus {
+    border-color: #1DB954;
+    box-shadow: 0 0 0 4px rgba(29,185,84,.15);
+}
+
+/* Apple Button */
+
+.apple-btn {
+    background: #1DB954;
+    border: none;
+
+    height: 46px;
+    width: 120px;
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 1px 2px rgba(0,0,0,.08),
+        0 6px 14px rgba(0,0,0,.10);
+
+    transition: all .18s ease;
+}
+
+.apple-btn:hover:not(:disabled) {
+    background: #21c75d;
+    transform: translateY(-1px);
+}
+
+.apple-btn:active:not(:disabled) {
+    transform: scale(.98);
+}
+
+.apple-btn:disabled {
+    background: #d2d2d7;
+    box-shadow: none;
+}
+
+/* Tabs */
+
+.searchTabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.searchTabs .btn-group {
+    gap: 10px;
+}
+
+/* Remove Bootstrap appearance */
+
+.tab-btn {
+    background: #f5f5f7 !important;
+    color: #444 !important;
+
+    border: none !important;
+
+    border-radius: 10px !important;
+
+    padding: 10px 22px;
+
+    font-weight: 600;
+
+    transition: .2s;
+}
+
+.tab-btn:hover {
+    background: #ececec !important;
+}
+
+.tab-btn.active {
+    background: #1DB954 !important;
+    color: white !important;
+
+    box-shadow: 0 6px 16px rgba(29,185,84,.25);
+}
+
+/* Results */
+
+.searchResultsContainer {
+    margin-top: 12px;
+}

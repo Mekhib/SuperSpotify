@@ -1,0 +1,130 @@
+/* Main Page Wrapper */
+.all-playlists-wrapper {
+  background: linear-gradient(to bottom, rgba(18, 18, 18, 0.9) 0%, rgba(12, 12, 12, 1) 100%);
+  min-height: 100vh;
+  width: 100%;
+  padding: 40px 4% 80px 4%;
+  box-sizing: border-box;
+  color: #ffffff;
+}
+
+/* Header */
+.playlists-header {
+  margin-bottom: 32px;
+}
+
+.playlists-page-title {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0;
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Responsive CSS Grid for Cards */
+.playlists-grid {
+  display: grid;
+  /* Automatically fits as many 200px cards as possible, stretching them to fill remaining space */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+/* Glassmorphic Card Styling */
+.playlist-glass-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.playlist-glass-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Card Image */
+.card-image-container {
+  width: 100%;
+  /* Creates a perfect square based on the current width */
+  aspect-ratio: 1 / 1; 
+  margin-bottom: 16px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.card-cover-art {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.playlist-glass-card:hover .card-cover-art {
+  transform: scale(1.05);
+}
+
+/* Card Typography */
+.card-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.card-subtitle {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Empty State */
+.no-playlists-text {
+  text-align: center;
+  padding: 60px 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 18px;
+}
+
+/* Mobile Tweaks */
+@media (max-width: 768px) {
+  .all-playlists-wrapper {
+    padding: 24px 16px 60px 16px;
+  }
+  
+  .playlists-grid {
+    /* Allow slightly smaller cards on narrow mobile screens so 2 can fit side-by-side */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+  }
+  
+  .playlist-glass-card {
+    padding: 12px;
+  }
+  
+  .card-title {
+    font-size: 15px;
+  }
+}
