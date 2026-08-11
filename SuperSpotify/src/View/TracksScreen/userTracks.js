@@ -26,22 +26,6 @@ function UserTracks({ updateId }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [sortOption, setSortOption] = useState("date_desc");
 
-  function TrackList({ tracks }) {
-  const handlePlayTrack = async (selectedTrackIndex) => {
-    try {
-      // Map all tracks in the current view to their Spotify URIs
-      const trackUris = tracks.map((track) => track.uri);
-
-      // Tell Spotify to start playing from the specific index clicked
-      await playerService.play({
-        uris: trackUris,
-        offset: { position: selectedTrackIndex },
-      }); //[cite: 6]
-    } catch (error) {
-      console.error("Failed to play track:", error);
-    }
-  };
-}
 
   // 1. Initial Load
   const fetchInitialData = useCallback(async () => {

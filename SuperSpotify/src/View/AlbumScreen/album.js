@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useMemo } from "react";
-import { useParams } from "react-router-dom";
+import { useEffect, useMemo, useState } from "react";
 import Image from "react-bootstrap/Image";
-import TableView from "../../components/TableView.js";
-import LoadingSpinner from "../../components/LoadingSpinner";
+import { useParams } from "react-router-dom";
 import FrostedGlassView from "../../components/FrostedGlassView.js";
-import { albumScreenApi } from "./index.js";
+import LoadingSpinner from "../../components/LoadingSpinner";
+import TableView from "../../components/TableView.js";
+import "../../css/albumScreen.css";
 import "../../css/table.css";
-import "../../css/albumScreen.css"; 
+import { albumScreenApi } from "./index.js";
 
 function AlbumScreen({ updateId }) {
   const { id } = useParams();

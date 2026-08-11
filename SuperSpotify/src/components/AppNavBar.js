@@ -5,8 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 // Icons
 import { FiHome, FiLogOut } from "react-icons/fi";
 import { FaList, FaSearch, FaMusic, FaInfo } from "react-icons/fa";
-import { RiPencilLine } from "react-icons/ri";
-import { BiCog } from "react-icons/bi";
+
 
 const AppNavbar = () => {
   const navigate = useNavigate();

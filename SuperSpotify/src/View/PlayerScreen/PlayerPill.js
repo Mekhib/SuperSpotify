@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "react-bootstrap/Image";
-import { FaPlay, FaPause, FaMusic, FaBackward, FaForward } from "react-icons/fa";
+import { FaPlay, FaPause, FaBackward, FaForward } from "react-icons/fa";
 
 function PlayerPill({ player, isHovered, onClick }) {
   const coverUrl = player.track?.album?.images?.[0]?.url;

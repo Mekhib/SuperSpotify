@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Image from "react-bootstrap/Image";
 import FrostedGlassView from "../../components/FrostedGlassView"; 
-import { FaPlay, FaPause, FaMusic, FaForward, FaBackward } from "react-icons/fa";
+import { FaPlay, FaPause, FaForward, FaBackward } from "react-icons/fa";
 
 function FullScreenPlayer({ player, onClose }) {
   const [showQueue, setShowQueue] = useState(false);

@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import "../../css/signIn.css"; 
 import { authService } from "../../services/authService";
-import { useNavigate } from "react-router-dom";
+
 
 const WAVE_HEIGHTS = [30, 55, 40, 70, 45, 80, 60, 35, 50, 65, 42, 58, 75, 38, 62, 48, 70, 33, 55, 44, 68, 52, 40, 60];
 

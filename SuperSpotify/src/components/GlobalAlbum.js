@@ -1,9 +1,7 @@
-import { React, useState, useEffect } from "react";
+import { React } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import { play } from "../services/playerService.js";
 import ListGroup from "react-bootstrap/ListGroup";
 import Image from "react-bootstrap/Image";
-import { useNavigate } from "react-router";
 import "../css/global.css";
 
 

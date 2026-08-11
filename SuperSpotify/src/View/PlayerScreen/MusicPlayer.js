@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useSpotifyPlayer } from "./index";
 import PlayerPill from "./PlayerPill";
 import FullScreenPlayer from "./FullScreenPlayer";

@@ -1,5 +1,4 @@
-import {userService} from "../../services/userService";
-import {globalService} from "../../services/globalService";
+import { globalService } from "../../services/globalService";
 
 export const albumScreenApi = {
  

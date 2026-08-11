@@ -11,7 +11,6 @@ import ArtistScreen from "./View/ArtistScreen/artist.js";
 import NowPlayingScreen from './View/NowPlayingScreen/nowPlaying.js';
 import About from './View/About/about.js';
 import UserPlaylistsScreen from './View/UserPlayListScreen/UserPlaylistsScreen.js';
-import { useState } from "react"
 import Search from './View/SearchScreen/search.js';
 import AppNavbar from './components/AppNavBar';
 

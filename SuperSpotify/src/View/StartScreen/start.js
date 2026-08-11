@@ -3,13 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { startAPI } from "./index.js";
 import "../../css/global.css";
 import Title from "../../components/Title.js";
-import ListItem from "../../components/ListItem.js";
 import SongsList from "../../components/SongsListView.js";
 import ArtistList from "../../components/ArtistListView.js";
 import Playlist from "../../components/Playlist.js";
 import GlobalList from "../../components/GlobalList.js";
-import ReleasesList from "../../components/ReleasesList.js";
-import GlobalAlbum from "../../components/GlobalAlbum.js";
 import LoadingSpinner from "../../components/LoadingSpinner.js";
 import "bootstrap/dist/css/bootstrap.css";
 
